@@ -44,5 +44,7 @@ class AdminManagementDatabaseSeeder extends Seeder
 
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo(Permission::all());
+        
+        Role::findByName('admin')->users()->sync(User::pluck('id'));
     }
 }
