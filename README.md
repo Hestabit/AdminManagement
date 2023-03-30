@@ -123,6 +123,21 @@ protected $middlewareAliases = [
 ]
 ```
 
+### Update User Model
+
+add HasRoles traits
+
+app/Http/Models/user.php
+
+```bash
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+
+```
+
 
 ### NOTE:- For testing the api you can run the following command
 
